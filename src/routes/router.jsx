@@ -14,6 +14,11 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home,
+                loader: async () => {
+                    await new Promise(resolve => setTimeout(resolve, 250));
+                    const res = await fetch('/places.json');
+                    return res.json();
+                },
             }
         ]
     },
