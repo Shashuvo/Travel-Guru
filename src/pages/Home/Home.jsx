@@ -11,7 +11,7 @@ const Home = () => {
 
     return (
         <div className="flex items-center justify-center w-full h-screen bg-cover bg-center"
-            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(${images[selectedPlace.id]})` }}>
+            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${images[selectedPlace.id]})` }}>
             <div className='w-full md:w-10/12'>
                 {/*banner */}
                 <HomeBanner place={selectedPlace} places={places} setSelectedPlace={setSelectedPlace}></HomeBanner>

@@ -1,13 +1,9 @@
 import React, { useRef } from 'react';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import cox from "../assets/images/Rectangle 1.png"
+import { images } from '../assets/images';
 
 
 const BannerRight = ({ places, selectedPlace, setSelectedPlace }) => {
-    const placeImages = {
-        1: cox,
-
-    };
     const scrollRef = useRef();
     const scrollLeft = () => {
         scrollRef.current.scrollBy({
@@ -29,9 +25,10 @@ const BannerRight = ({ places, selectedPlace, setSelectedPlace }) => {
                     places.map((place, index) => (
                         <div key={place.id + "-" + index} onClick={() => setSelectedPlace(place)}
                             className={`min-w-70 h-96 rounded-xl overflow-hidden cursor-pointer relative border-4 transition-all duration-300
+                            before:absolute before:inset-0 before:bg-linear-to-t before:from-black/90 before:via-black/20 before:to-transparent before:z-10
                             ${selectedPlace.id === place.id ? "border-primary" : "border-transparent"}`}>
-                            <img src={placeImages[place.id]} alt="Place Image" className='w-full h-full object-cover' />
-                            <h1 className='absolute bottom-8 left-4 text-white title text-4xl'>{place.title}</h1>
+                            <img src={images[place.id]} alt="Place Image" className='w-full h-full object-cover' />
+                            <h1 className='absolute bottom-8 left-4 text-white title text-4xl z-20'>{place.title}</h1>
                         </div>
                     ))
                 }
