@@ -18,9 +18,9 @@ const BannerRight = ({ places, selectedPlace, setSelectedPlace }) => {
         });
     };
     return (
-        <div className='relative w-190'>
+        <div className='relative md:w-190'>
             {/* cards */}
-            <div className='flex gap-7 overflow-x-auto scrollbar-hide mt-36' ref={scrollRef}>
+            <div className='flex flex-col md:flex-row gap-5 md:gap-7 overflow-x-auto scrollbar-hide mt-20 md:mt-36' ref={scrollRef}>
                 {
                     places.map((place, index) => (
                         <div key={place.id + "-" + index} onClick={() => setSelectedPlace(place)}
