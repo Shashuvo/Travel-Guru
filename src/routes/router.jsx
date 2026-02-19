@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from '../layouts/HomeLayout';
 import AuthLayout from '../layouts/AuthLayout';
 import Home from '../pages/Home/Home';
+import Login from '../pages/Auth/Login';
 
 
 
@@ -25,6 +26,12 @@ export const router = createBrowserRouter([
     {
         path: "/auth",
         Component: AuthLayout,
+        children: [
+            {
+                path: "/auth/login",
+                Component: Login
+            }
+        ]
     },
     {
         path: "/*",
