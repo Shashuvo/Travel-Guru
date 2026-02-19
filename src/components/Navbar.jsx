@@ -31,8 +31,21 @@ const Navbar = () => {
             {/* center Navbar */}
             <div className='navbar-center relative hidden md:flex flex-none lg:flex-[0_0_33.33%] justify-center'>
                 {/* search */}
-                <span className='absolute left-3'><IoSearch /></span>
-                <input type="text" placeholder="       Search your Destination..." className="input input- py-4 bg-transparent border-white text-white placeholder-white w-full" />
+                <label className="input">
+                    <svg className="h-[1em] opacity-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="2.5"
+                            fill="none"
+                            stroke="currentColor"
+                        >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input type="search" required placeholder="Search your Destination..." className='border-white text-white placeholder-white w-full' />
+                </label>
             </div>
             {/* end navbar */}
             <div className="navbar-end flex-none lg:flex-[0_0_50%] flex justify-end items-center gap-12">
