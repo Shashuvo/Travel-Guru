@@ -6,9 +6,7 @@ import { images } from '../../assets/images';
 const Home = () => {
     const places = useLoaderData();
     const [selectedPlace, setSelectedPlace] = useState(places[0]);
-    console.log(places);
-    console.log(selectedPlace);
-
+    
     return (
         <div className="flex items-center justify-center w-full min-h-screen bg-repeat-y bg-contain md:bg-cover md:bg-no-repeat bg-center"
             style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${images[selectedPlace.id]})` }}>
