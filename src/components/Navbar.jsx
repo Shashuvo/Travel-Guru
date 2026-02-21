@@ -60,7 +60,7 @@ const Navbar = ({ theme, showSearch }) => {
                     {links}
                 </ul>
                 {/* button */}
-                <a className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Login</a>
+                <NavLink to="/auth/login" className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Login</NavLink>
             </div>
         </div>
     );
