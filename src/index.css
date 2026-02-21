@@ -4,7 +4,6 @@
 
 /* Custom Theme */
 @plugin "daisyui/theme" {
-    name: "dark";
     default: true;
     --color-primary: #F9A51A;
 }

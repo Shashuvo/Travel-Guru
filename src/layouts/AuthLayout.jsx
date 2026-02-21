@@ -7,7 +7,7 @@ const AuthLayout = () => {
         <div className='relative'>
             <div className="absolute top-0 left-0 w-full z-50">
                 <nav className="w-full md:w-10/12 mx-auto mt-2 md:mt-5 ">
-                    <Navbar />
+                    <Navbar theme="light" />
                 </nav>
             </div>
             <main>

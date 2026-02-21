@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const HomeBanner = ({ place, places, setSelectedPlace }) => {
     const { title, details } = place;
     return (
-        <div className='flex flex-col md:flex-row w-full items-center justify-between md:gap-11'>
+        <div className='flex flex-col md:flex-row w-full items-center justify-between md:gap-11 text-white'>
             {/* left Banner */}
             <div className='w-full md:w-1/2 flex flex-col gap-5 md:gap-7'>
                 <h1 className='title text-5xl md:text-7xl'>{title}</h1>
