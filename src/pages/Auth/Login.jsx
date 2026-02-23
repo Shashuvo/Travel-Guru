@@ -15,7 +15,7 @@ const Login = () => {
                         </label>
                         <p className='underline font-semibold text-primary'>Forgot Password</p>
                     </div>
-                    <button className="btn btn-neutral mt-4">Login</button>
+                    <button className="btn btn-primary mt-4">Login</button>
                 </form>
             </div>
 
