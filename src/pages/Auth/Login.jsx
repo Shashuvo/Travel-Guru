@@ -5,8 +5,8 @@ const Login = () => {
     return (
         <div className='flex flex-col items-center gap-3'>
             {/* login form */}
-            <div className='border-2 border-[#ABABAB] rounded-lg mt-28 w-2/4'>
-                <form className="fieldset rounded-box py-9 px-14 space-y-6">
+            <div className='border-2 border-[#ABABAB] rounded-lg mt-28 w-11/12 md:w-2/4'>
+                <form className="fieldset rounded-box py-9 px-7 md:px-14 space-y-3 md:space-y-6">
                     <h1 className="text-2xl font-bold">Login</h1>
                     <input type="email" name="email" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Username or Email" />
                     <input type="password" name="password" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Password" />
@@ -18,12 +18,12 @@ const Login = () => {
                         <p className='underline font-semibold text-primary'>Forgot Password</p>
                     </div>
                     <button className="btn btn-primary mt-4 text-black">Login</button>
-                    <p className='text-center font-medium text-[16px]'>Don’t have an account? <NavLink to="/auth/register" className='underline font-semibold text-primary'>Create an account</NavLink></p>
+                    <p className='text-center font-medium text-xs md:text-[16px]'>Don’t have an account? <NavLink to="/auth/register" className='underline font-semibold text-primary'>Create an account</NavLink></p>
                 </form>
             </div>
-            <div className="divider w-2/5 mx-auto"><span>Or</span></div>
+            <div className="divider w-11/12 md:w-2/5 mx-auto"><span>Or</span></div>
             {/* social login buttons */}
-            <div className='flex flex-col gap-2 w-2/5 mx-auto'>
+            <div className='flex flex-col gap-2 w-11/12 md:w-2/5 mx-auto'>
                 {/* facebook */}
                 <button className="btn bg-white text-black border-[#C7C7C7] rounded-4xl">
                     <svg aria-label="Facebook logo" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#1A77F2" d="M8 12h5V8c0-6 4-7 11-6v5c-4 0-5 0-5 3v2h5l-1 6h-4v12h-6V18H8z"></path></svg>
