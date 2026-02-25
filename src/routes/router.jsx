@@ -5,6 +5,8 @@ import AuthLayout from '../layouts/AuthLayout';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Auth/Login';
 import Register from '../pages/Auth/Register';
+import Destination from '../pages/Destination';
+
 
 
 
@@ -16,6 +18,15 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home,
+                loader: async () => {
+                    await new Promise(resolve => setTimeout(resolve, 250));
+                    const res = await fetch('/places.json');
+                    return res.json();
+                },
+            },
+            {
+                path: "/destination/:id",
+                Component: Destination,
                 loader: async () => {
                     await new Promise(resolve => setTimeout(resolve, 250));
                     const res = await fetch('/places.json');
