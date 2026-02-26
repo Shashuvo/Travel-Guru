@@ -10,7 +10,7 @@ const Navbar = ({ theme, showSearch }) => {
     const dropDownBg = isDark ? "bg-black/80" : "bg-white/80";
     const links = <>
         <li><NavLink to="/news">News</NavLink></li>
-        <li><NavLink to="/destination">Destination</NavLink></li>
+        <li><NavLink to="/">Destination</NavLink></li>
         <li><NavLink to="/blog">Blog</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
     </>
