@@ -2,17 +2,28 @@ import React from 'react';
 import { NavLink } from 'react-router';
 
 const Register = () => {
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const firstName = form.firstName.value;
+        const lastName = form.lastName.value;
+        const email = form.email.value;
+        const password = form.firstName.value;
+        const confirmPassword = form.confirmPassword.value;
+        console.log(firstName, lastName, email, password, confirmPassword);
+    }
     return (
         <div className='flex flex-col items-center gap-3 py-10'>
             {/* login form */}
             <div className='border-2 border-[#ABABAB] rounded-lg mt-28 w-11/12 md:w-2/4'>
-                <form className="fieldset rounded-box py-9 px-7 md:px-14 space-y-3 md:space-y-6">
+                <form onSubmit={handleRegister} className="fieldset rounded-box py-9 px-7 md:px-14 space-y-3 md:space-y-6">
                     <h1 className="text-2xl font-bold">Create an account</h1>
                     <input type="text" name="firstName" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="First Name" />
-                    <input type="text" name="LastName" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Last Name" />
+                    <input type="text" name="lastName" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Last Name" />
                     <input type="email" name="email" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Username or Email" />
                     <input type="password" name="password" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Password" />
-                    <input type="password" name="password" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Confirm Password" />
+                    <input type="password" name="confirmPassword" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Confirm Password" />
                     <button className="btn btn-primary mt-4 text-black">Create an account</button>
                     <p className='text-center font-medium text-xs md:text-[16px]'>Already have an account? <NavLink to="/auth/login" className='underline font-semibold text-primary'>Login</NavLink></p>
                 </form>
