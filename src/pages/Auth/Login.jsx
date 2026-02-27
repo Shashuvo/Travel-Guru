@@ -2,11 +2,18 @@ import React from 'react';
 import { NavLink } from 'react-router';
 
 const Login = () => {
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log( email, password);
+    }
     return (
         <div className='flex flex-col items-center gap-3 py-10'>
             {/* login form */}
             <div className='border-2 border-[#ABABAB] rounded-lg mt-28 w-11/12 md:w-2/4'>
-                <form className="fieldset rounded-box py-9 px-7 md:px-14 space-y-3 md:space-y-6">
+                <form onSubmit={handleLogin} className="fieldset rounded-box py-9 px-7 md:px-14 space-y-3 md:space-y-6">
                     <h1 className="text-2xl font-bold">Login</h1>
                     <input type="email" name="email" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Username or Email" />
                     <input type="password" name="password" className="input w-full border-0 border-b border-[#C5C5C5] placeholder-black pl-0 rounded-none focus:outline-none focus:border-black" placeholder="Password" />

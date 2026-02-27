@@ -9,7 +9,7 @@ const Register = () => {
         const firstName = form.firstName.value;
         const lastName = form.lastName.value;
         const email = form.email.value;
-        const password = form.firstName.value;
+        const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
         console.log(firstName, lastName, email, password, confirmPassword);
     }
