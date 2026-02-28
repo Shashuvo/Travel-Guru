@@ -11,7 +11,6 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
-        console.log(firstName, lastName, email, password, confirmPassword);
     }
     return (
         <div className='flex flex-col items-center gap-3 py-10'>
