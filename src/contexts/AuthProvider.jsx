@@ -3,6 +3,7 @@ import { AuthContext } from './AuthContext';
 
 
 const AuthProvider = ({ children }) => {
+    const [user,setUser] = useState();
     const authData = {
         me: 2,
     }
