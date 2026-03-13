@@ -1,9 +1,10 @@
-import React from 'react';
-import { IoSearch } from 'react-icons/io5';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../contexts/AuthContext';
 
 
 const Navbar = ({ theme, showSearch }) => {
+    const { user } = use(AuthContext);
     const isDark = theme === "dark";
     const textColor = isDark ? "text-white" : "text-black";
     const justify = showSearch ? "justify-start" : "justify-between";
@@ -37,18 +38,7 @@ const Navbar = ({ theme, showSearch }) => {
                 <div className='navbar-center relative hidden md:flex flex-none lg:flex-[0_0_33.33%] justify-center'>
                     {/* search */}
                     <label className="input border-2 border-white bg-transparent">
-                        <svg className="h-[1em] opacity-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <g
-                                strokeLinejoin="round"
-                                strokeLinecap="round"
-                                strokeWidth="2.5"
-                                fill="none"
-                                stroke="currentColor"
-                            >
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.3-4.3"></path>
-                            </g>
-                        </svg>
+                        s
                         <input type="search" required placeholder="Search your Destination..." className='text-white placeholder-white border-white w-full' />
                     </label>
                 </div>
@@ -60,7 +50,9 @@ const Navbar = ({ theme, showSearch }) => {
                     {links}
                 </ul>
                 {/* button */}
-                <NavLink to="/auth/login" className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Login</NavLink>
+                {
+                    user ? <button className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Logout</button> : <NavLink to="/auth/login" className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Login</NavLink>
+                }
             </div>
         </div>
     );

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AuthContext } from './AuthContext';
 
 
 const AuthProvider = ({ children }) => {
-    const [user,setUser] = useState();
+    const [user,setUser] = useState(null);
     const authData = {
-        me: 2,
+        user,
+        setUser
     }
     return (
         <AuthContext value={authData}>
