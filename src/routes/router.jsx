@@ -32,6 +32,10 @@ export const router = createBrowserRouter([
                     const res = await fetch('/places.json');
                     return res.json();
                 },
+            },
+            {
+                path: "/about",
+                element: <h1>About section</h1>
             }
         ]
     },
