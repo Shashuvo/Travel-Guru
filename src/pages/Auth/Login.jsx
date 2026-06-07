@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Login = () => {
+    const {user, setUser} = use(AuthContext);
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        setUser(email,password)
+        console.log(user);
     }
     return (
         <div className='flex flex-col items-center gap-3 py-10'>
