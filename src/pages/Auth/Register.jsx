@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
+
+    const { createUser, setUser } = use(AuthContext);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -11,6 +14,16 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
+        console.log(confirmPassword);
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                setUser({ ...user, displayFirstName: firstName, displayLastName: lastName })
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
     }
     return (
         <div className='flex flex-col items-center gap-3 py-10'>

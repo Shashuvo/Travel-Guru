@@ -10,7 +10,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         setUser(email)
-        console.log(user);
+        console.log(user,password);
     }
     return (
         <div className='flex flex-col items-center gap-3 py-10'>
