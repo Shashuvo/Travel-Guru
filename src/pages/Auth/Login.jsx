@@ -11,7 +11,6 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-
         logIn(email, password)
             .then(result => {
                 setUser(result.user);
@@ -37,7 +36,7 @@ const Login = () => {
                         </label>
                         <p className='underline font-semibold text-primary cursor-pointer'>Forgot Password</p>
                     </div>
-                    <button type="submit" className="btn btn-primary mt-4 text-black">Login</button>
+                    <button type="submit" className="btn btn-primary w-full mt-4 text-black">Login</button>
                     <p className='text-center font-medium text-xs md:text-[16px]'>Don't have an account? <NavLink to="/auth/register" className='underline font-semibold text-primary'>Create an account</NavLink></p>
                 </form>
             </div>
