@@ -4,11 +4,21 @@ import { AuthContext } from '../contexts/AuthContext';
 
 
 const Navbar = ({ theme, showSearch }) => {
-    const { user } = use(AuthContext);
+    const { setUser, user, logOut } = use(AuthContext);
     const isDark = theme === "dark";
     const textColor = isDark ? "text-white" : "text-black";
     const justify = showSearch ? "justify-start" : "justify-between";
     const dropDownBg = isDark ? "bg-black/80" : "bg-white/80";
+
+    const handleLogout = () => {
+        logOut().then(() => {
+            setUser(null);
+            alert("logged out successfully")
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
     const links = <>
         <li><NavLink to="/news">News</NavLink></li>
         <li><NavLink to="/">Destination</NavLink></li>
@@ -51,7 +61,7 @@ const Navbar = ({ theme, showSearch }) => {
                 </ul>
                 {/* button */}
                 {
-                    user ? <button className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Logout</button> : <NavLink to="/auth/login" className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Login</NavLink>
+                    user ? <button onClick={handleLogout} className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Logout</button> : <NavLink to="/auth/login" className="btn btn-primary text-black border-none px-6 hover:bg-primary/80">Login</NavLink>
                 }
             </div>
         </div>
