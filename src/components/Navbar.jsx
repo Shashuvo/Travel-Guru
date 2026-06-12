@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext';
+import { BiSearch } from 'react-icons/bi';
 
 
 const Navbar = ({ theme, showSearch }) => {
@@ -48,7 +49,7 @@ const Navbar = ({ theme, showSearch }) => {
                 <div className='navbar-center relative hidden md:flex flex-none lg:flex-[0_0_33.33%] justify-center'>
                     {/* search */}
                     <label className="input border-2 border-white bg-transparent">
-                        s
+                        <BiSearch></BiSearch>
                         <input type="search" required placeholder="Search your Destination..." className='text-white placeholder-white border-white w-full' />
                     </label>
                 </div>
