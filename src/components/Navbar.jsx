@@ -10,7 +10,6 @@ const Navbar = ({ theme, showSearch }) => {
     const textColor = isDark ? "text-white" : "text-black";
     const justify = showSearch ? "justify-start" : "justify-between";
     const dropDownBg = isDark ? "bg-black/80" : "bg-white/80";
-    console.log(user);
 
     const handleLogout = () => {
         logOut().then(() => {
