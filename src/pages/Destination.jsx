@@ -5,13 +5,17 @@ import { images } from '../assets/images';
 const Destination = () => {
     const data = useLoaderData();
     const { id } = useParams();
-    const [place, setPlace] = useState({})
+    const [place, setPlace] = useState({});
     useEffect(() => {
         const singlePlace = data.find(singlePlace => singlePlace.id == id);
         setTimeout(() => {
             setPlace(singlePlace);
         }, 0)
-    }, [data, id])
+    }, [data, id]);
+
+    const handleBooking = () => {
+        console.log("booking clicked");
+    }
     return (
         <div className="flex items-center justify-center w-full min-h-screen bg-repeat-y bg-contain md:bg-cover md:bg-no-repeat bg-center"
             style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${images[id]})` }}>
@@ -39,7 +43,7 @@ const Destination = () => {
                                 <input type="date" className="input bg-base-200 text-black font-bold placeholder:text-black" />
                             </div>
                         </div>
-                        <button className="btn btn-primary w-full text-black hover:bg-primary/90 mt-4">Start Booking</button>
+                        <button onClick={handleBooking} className="btn btn-primary w-full text-black hover:bg-primary/90 mt-4">Start Booking</button>
                     </fieldset>
                 </div>
             </div>
